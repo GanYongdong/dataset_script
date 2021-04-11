@@ -18,6 +18,7 @@ dst_valid_path = root_dir + 'voc_dataset\\ImageSets\\Main2\\valid.txt'
 dst_test_path = root_dir + 'voc_dataset\\ImageSets\\Main2\\test.txt'
 dst_all_path = root_dir + 'voc_dataset\\ImageSets\\Main2\\all.txt'
 dst_train_path2 = root_dir + 'voc_dataset\\ImageSets\\Main\\train.txt'
+dst_trainval_path2 = root_dir + 'voc_dataset\\ImageSets\\Main\\trainval.txt'
 dst_valid_path2 = root_dir + 'voc_dataset\\ImageSets\\Main\\val.txt'
 dst_test_path2 = root_dir + 'voc_dataset\\ImageSets\\Main\\test.txt'
 # 比例
@@ -39,9 +40,12 @@ file2 = open(dst_valid_path, "a", encoding='utf-8')
 file3 = open(dst_test_path, "a", encoding='utf-8')
 file4 = open(dst_all_path, "a", encoding='utf-8')
 file11 = open(dst_train_path2, 'w').close()
+file55 = open(dst_trainval_path2, 'w').close()
+
 file22 = open(dst_valid_path2, 'w').close()
 file33 = open(dst_test_path2, 'w').close()
 file11 = open(dst_train_path2, "a", encoding='utf-8')
+file55 = open(dst_trainval_path2, 'a', encoding='utf-8')
 file22 = open(dst_valid_path2, "a", encoding='utf-8')
 file33 = open(dst_test_path2, "a", encoding='utf-8')
 
@@ -56,6 +60,7 @@ for i in range(len(fileNameList)):
         content = fileNameList[i]
         content = content.replace('.xml', '\n', 1)
         file11.write(content)
+        file55.write(content)
         file33.write(content)
     else:
         content = './JPEGImages/' + fileNameList[i] + ' ' + './Annotations/' + fileNameList[i] + '\n'
@@ -71,4 +76,9 @@ file1.close()
 file2.close()
 file3.close()
 file4.close()
+file11.close()
+file22.close()
+file33.close()
+file44.close()
+file55.close()
 print("all finish!")
